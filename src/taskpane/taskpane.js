@@ -26,3 +26,27 @@ export async function run() {
   insertAt.appendChild(document.createTextNode(item.subject));
   insertAt.appendChild(document.createElement("br"));
 }
+
+async function testLocalApi() {
+
+    try {
+
+        const response = await fetch("http://localhost:5000/");
+
+        if (!response.ok) {
+            throw new Error("HTTP error: " + response.status);
+        }
+
+        const data = await response.json();
+
+        console.log("Data received from VB.NET:", data);
+
+    } catch (error) {
+
+        console.error("Could not connect to VB.NET helper:", error);
+
+    }
+
+}
+
+testLocalApi();
