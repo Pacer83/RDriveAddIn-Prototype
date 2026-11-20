@@ -78,3 +78,25 @@
 b {
     font-weight: bold;
 }
+#folderTree {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+#folderTree ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+#folderTree li {
+    margin: 6px 0;
+}
+
+#folderTree summary {
+    cursor: pointer;
+    padding: 3px;
+}
+
+#folderTree summary:hover {
+    background-color: #e8eef7;
+}
