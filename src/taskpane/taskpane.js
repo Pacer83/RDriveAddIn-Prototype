@@ -75,6 +75,27 @@ async function getFolders(path = "") {
 
 }
 
+async function displayRootFolders() {
+
+    const folders = await getFolders();
+
+    const folderList = document.getElementById("folder-list");
+
+    // Clear any existing entries
+    folderList.innerHTML = "";
+
+    folders.forEach(folder => {
+
+        const folderElement = document.createElement("div");
+
+        folderElement.textContent = folder;
+
+        folderList.appendChild(folderElement);
+
+    });
+
+}
+
 async function loadRootFolders() {
     try {
         const response = await fetch("http://localhost:5000/");
@@ -109,3 +130,5 @@ async function testFolderLoading() {
 }
 
 testFolderLoading();
+
+displayRootFolders();
