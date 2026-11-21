@@ -61,6 +61,8 @@ async function loadRootFolders() {
 
         const folders = await response.json();
 
+console.log("Successfully connected to RDriveHelper!");
+
         console.log("Root folders:", folders);
 
     } catch (error) {
