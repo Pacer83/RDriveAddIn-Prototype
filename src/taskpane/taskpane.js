@@ -51,6 +51,30 @@ async function testLocalApi() {
 
 testLocalApi();
 
+async function getFolders(path = "") {
+
+    try {
+
+        const url = "http://localhost:5000/?path=" + encodeURIComponent(path);
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Unable to retrieve folders.");
+        }
+
+        return await response.json();
+
+    } catch (error) {
+
+        console.error("Error loading folders:", error);
+
+        return [];
+
+    }
+
+}
+
 async function loadRootFolders() {
     try {
         const response = await fetch("http://localhost:5000/");
@@ -71,3 +95,17 @@ console.log("Successfully connected to RDriveHelper!");
 }
 
 loadRootFolders();
+
+async function testFolderLoading() {
+
+    const rootFolders = await getFolders();
+
+    console.log("Root folders using getFolders():", rootFolders);
+
+    const subFolders = await getFolders("750");
+
+    console.log("Subfolders of 750 using getFolders():", subFolders);
+
+}
+
+testFolderLoading();
