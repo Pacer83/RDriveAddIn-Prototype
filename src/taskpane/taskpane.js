@@ -50,3 +50,22 @@ async function testLocalApi() {
 }
 
 testLocalApi();
+
+async function loadRootFolders() {
+    try {
+        const response = await fetch("http://localhost:5000/");
+
+        if (!response.ok) {
+            throw new Error("Unable to retrieve folders.");
+        }
+
+        const folders = await response.json();
+
+        console.log("Root folders:", folders);
+
+    } catch (error) {
+        console.error("Error loading folders:", error);
+    }
+}
+
+loadRootFolders();
