@@ -75,6 +75,7 @@ async function getFolders(path = "") {
 
 }
 
+
 async function displayRootFolders() {
 
     const folders = await getFolders();
@@ -93,7 +94,7 @@ async function displayRootFolders() {
         const folderButton = document.createElement("button");
         folderButton.textContent = "▶ " + folder;
 
-        // Create a container for subfolders (initially hidden) aa
+        // Create a container for subfolders (initially hidden)
         const subFolderContainer = document.createElement("div");
         subFolderContainer.style.display = "none";
         subFolderContainer.style.marginLeft = "20px";
@@ -105,7 +106,7 @@ async function displayRootFolders() {
 
     });
 
-
+}
 
 async function loadRootFolders() {
     try {
