@@ -75,6 +75,8 @@ async function getFolders(path = "") {
 
 }
 
+
+
 async function displayRootFolders() {
 
     const folders = await getFolders();
@@ -86,22 +88,11 @@ async function displayRootFolders() {
 
     folders.forEach(folder => {
 
-        // Create a container for this folder and its children
-        const folderContainer = document.createElement("div");
+        const folderElement = document.createElement("div");
 
-        // Create the clickable folder button
-        const folderButton = document.createElement("button");
-        folderButton.textContent = "▶ " + folder;
+        folderElement.textContent = folder;
 
-        // Create a container for subfolders (initially hidden) aa
-        const subFolderContainer = document.createElement("div");
-        subFolderContainer.style.display = "none";
-        subFolderContainer.style.marginLeft = "20px";
-
-        folderContainer.appendChild(folderButton);
-        folderContainer.appendChild(subFolderContainer);
-
-        folderList.appendChild(folderContainer);
+        folderList.appendChild(folderElement);
 
     });
 
