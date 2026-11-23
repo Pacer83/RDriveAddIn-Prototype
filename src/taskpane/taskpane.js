@@ -93,7 +93,7 @@ async function displayRootFolders() {
         const folderButton = document.createElement("button");
         folderButton.textContent = "▶ " + folder;
 
-        // Create a container for subfolders (initially hidden)
+        // Create a container for subfolders (initially hidden) aa
         const subFolderContainer = document.createElement("div");
         subFolderContainer.style.display = "none";
         subFolderContainer.style.marginLeft = "20px";
